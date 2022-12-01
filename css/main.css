@@ -455,7 +455,7 @@ body {
   background: url("../images/icoMyMenu.png") no-repeat;
   background-position: 0px 0px;
 }
-.center-more:hover::after {
+.center-more.active::after {
   background-position: 0px -6px;
 }
 .center-list {
@@ -575,7 +575,11 @@ body {
   vertical-align: 2px;
   margin-left: 2px;
 }
-.join-bt:hover .join-bt-icon {
+/* 클래스 포커스 처리 */
+.join-bt.active {
+  color: #76bd42 !important;
+}
+.join-bt.active .join-bt-icon {
   background-position: 0px -8px;
 }
 
@@ -586,7 +590,7 @@ body {
   /* 좌표가 아닌 보이는 영역의 내용!!!!!!을 이동한다. */
   transform: translateX(-50%);
   top: 42px;
-  display: block;
+  display: none;
   padding: 20px;
   background: #fff;
   border: 1px solid #ddd;
@@ -647,10 +651,10 @@ body {
   margin-left: 3px;
   vertical-align: 2px;
 }
-.more-menu-bt:hover {
-  color: #76bd42;
+.more-menu-bt.active {
+  color: #76bd42 !important;
 }
-.more-menu-bt:hover .more-menu-icon {
+.more-menu-bt.active .more-menu-icon {
   background-position: 0px -6px;
 }
 
