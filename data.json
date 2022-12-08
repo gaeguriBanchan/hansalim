@@ -433,18 +433,138 @@
         "link": "#"
       }
     ],
-    "populargood-3": [],
-    "populargood-4": [],
-    "populargood-5": [],
-    "populargood-6": [],
-    "populargood-7": [],
-    "populargood-8": [],
-    "populargood-9": [],
-    "populargood-10": [],
-    "populargood-11": [],
-    "populargood-12": [],
-    "populargood-13": [],
-    "populargood-14": []
+    "populargood-3": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_3.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-4": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_4.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-5": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_5.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-6": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_6.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-7": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_7.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-8": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_8.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-9": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_1.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-10": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_2.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-11": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_3.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-12": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_4.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-13": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_5.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-14": [
+      {
+        "name": "콩콩크림빵",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_6.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ]
   },
   "banner": [
     {

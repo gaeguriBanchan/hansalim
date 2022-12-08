@@ -461,7 +461,7 @@ window.onload = function () {
     const tag = document.querySelectorAll(".popular-slide a");
     // 찾아서 저장을 한 배열의 각 a 태그에 기능을 준다.
     // forEach 가 for 문 보다 적용하기가 수월하다.
-    tag.forEach(function (item) {
+    tag.forEach(function (item, index) {
       // 현재 item 에는 a 태그가 하나씩 순차적으로 대입된다.
       // mouserover, mouseouter 을 콜백 적용한다.
       item.addEventListener("mouseover", function () {
@@ -478,7 +478,7 @@ window.onload = function () {
       });
 
       // 클릭을 하면 버튼 (.popular-more)의 글자를
-      // 클릭된 타이트의 글자러 변경한다
+      // 클릭된 타이틀의 글자로 변경한다
       item.addEventListener("click", function (event) {
         // a 태그이므로 href 가 적용딘다.
         // 웹브라우저 갱신되므로 UI를 위해서 막아야 한다.
@@ -486,6 +486,11 @@ window.onload = function () {
         const bt = document.querySelector(".popular-more");
         const title = this.querySelector(".popular-cate-name");
         bt.innerHTML = `${title.innerHTML} 물품 더보기`;
+
+        // 하단의 목록을 갱신한다.
+        // 현재 클릭된 번호를 popularShow 에 담는다.
+        popularShow = index;
+        showPopularGood();
       });
     });
   }
@@ -802,5 +807,69 @@ window.onload = function () {
   // 웹브라우저 기능 실행 요청
   xhttp.send();
 
-  // console.log("슬라이드 실행 했지롱");
+  // 커뮤니티 탭 메뉴
+  // 탭 버튼
+  const tabBtArr = document.querySelectorAll(".community-bt");
+  // 탭 내용
+  const tabConArr = document.querySelectorAll(".community-notice dd");
+  // 탭 포커스
+  let tabFocusIndex = 0;
+  // 탭 버튼 클릭 처리
+  tabBtArr.forEach(function (item, index) {
+    item.addEventListener("click", function () {
+      tabFocusIndex = index;
+      tabFocusFn();
+    });
+  });
+  // 탭 포커스 함수를 생성
+  function tabFocusFn() {
+    // 포커스 css 를 적용 및 제거
+    // 일단 모두 제거
+    tabBtArr.forEach(function (item) {
+      item.classList.remove("community-bt-active");
+    });
+    // 인덱스에 해당하는 것만 적용.
+    tabBtArr[tabFocusIndex].classList.add("community-bt-active");
+    // 내용에서 일단 모두 제거
+    tabConArr.forEach(function (item) {
+      item.classList.remove("community-visible-active");
+    });
+    tabConArr[tabFocusIndex].classList.add("community-visible-active");
+  }
+
+  // 스크롤시 상단 고정 클래스 추가/제거
+  const wrap = document.querySelector(".wrap");
+  const header = document.querySelector(".header");
+  let scy = 0;
+  window.addEventListener("scroll", function () {
+    scy = this.document.documentElement.scrollTop;
+    if (scy > 0) {
+      wrap.classList.add("active");
+      header.classList.add("active");
+    } else {
+      wrap.classList.remove("active");
+      header.classList.remove("active");
+    }
+  });
+
+  // 하단 패밀리 펼침 기능
+  // 목록 열기 버튼
+  const openBt = document.querySelector(".footer-link");
+  // 목록 닫기 버튼
+  const closeBt = document.querySelector(".family-close");
+  // 보여질 패밀리 목록
+  const family = document.querySelector(".family");
+  // 스크롤바를 안생기게 하려고 처리
+  const community = document.querySelector(".community");
+  // 기능처리
+  openBt.addEventListener("click", function () {
+    family.classList.add("active");
+    this.classList.add("active");
+    community.classList.add("active");
+  });
+  closeBt.addEventListener("click", function () {
+    family.classList.remove("active");
+    openBt.classList.remove("active");
+    community.classList.remove("active");
+  });
 };
