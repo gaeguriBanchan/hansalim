@@ -115,6 +115,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+    <!-- smooth scrollbar -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.js"
+      integrity="sha512-yn9N2uBs4OocMUaJ9wZK6ELv+qXIULoRa7IvOsGz2wqWQRt8mNqU1L2I9Fau24PPxEKlGxuEDkRKvsanwAWUYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script src="js/script.js"></script>
   </head>
   <body>
@@ -447,7 +455,7 @@
             </div>
             <div class="season-right">
               <div class="season-list">
-                <ul class="season-good-list" id="data-season">
+                <ul class="season-good-list" id="data-season" data-scrollbar>
                   <!-- 데이터 처리 -->
                 </ul>
               </div>
@@ -461,10 +469,10 @@
                   />
                   <label for="chall" class="season-label"> 라벨 </label>
 
-                  전체 선택 <em>3</em>개
+                  전체 선택 <em id="buy-total">3</em>개
                 </div>
                 <a href="#" class="buy-good">
-                  총 <em>50,000</em>원 바구니 담기
+                  총 <em id="buy-total-money">50,000</em>원 바구니 담기
                 </a>
               </div>
             </div>

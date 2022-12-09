@@ -1290,12 +1290,22 @@ body {
   border-bottom: 1px solid #ddd;
   padding-bottom: 15px;
 }
+/* Smooth Scrollbar 적용  */
+.scrollbar-thumb {
+  width: 8px !important;
+  /* height: 8px !important; */
+  background: #76bd42 !important;
+  border-radius: 4px !important;
+}
+.scrollbar-track {
+  background: rgba(222, 222, 222, 0) !important;
+}
 .season-good-list {
   position: relative;
   display: block;
   width: 100%;
   height: calc(85px * 3);
-  overflow: hidden;
+  overflow: auto;
 }
 .season-good-list > li {
   position: relative;

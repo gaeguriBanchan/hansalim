@@ -705,6 +705,10 @@ window.onload = function () {
     goodNewsTag.innerHTML = html;
   }
   // 시즌 화면 출력 기능
+  const buyTotal = document.getElementById("buy-total");
+  const buyTotalMoney = document.getElementById("buy-total-money");
+  let buyTotalCount = 0;
+  let buyTotalMoneyPrice = 0;
   function showSeason() {
     let html = "";
     // 데이터 처리
@@ -715,8 +719,9 @@ window.onload = function () {
           <input
             type="checkbox"
             id="ch${index}"
-            class="season-good-check"
+            class="season-good-check season-item"
             checked
+            value=${item.price}
           />
           <label for="ch${index}" class="season-label"> ${item.title} </label>
 
@@ -733,6 +738,73 @@ window.onload = function () {
       html += tag;
     });
     seasonTag.innerHTML = html;
+    // Smooth Scrollbar 적용
+    Scrollbar.initAll();
+    // 체크 박스 각각의 기능
+    checkBoxFn();
+
+    // 계산을 출력
+    showBuyGood();
+  }
+
+  // 전체 체크박스 기능
+  const chkAll = document.getElementById("chall");
+  chkAll.addEventListener("change", function () {
+    const chkArr = document.querySelectorAll(".season-item");
+    if (chkAll.checked) {
+      // 전체 체크를 해야 하는 경우
+      chkArr.forEach(function (item) {
+        item.checked = true;
+      });
+    } else {
+      // 전체 체크를 해제 해야 하는 경우
+      chkArr.forEach(function (item) {
+        item.checked = false;
+      });
+    }
+    showBuyGood();
+  });
+
+  // 체크 박스 각각의 기능
+  function checkBoxFn() {
+    const chkArr = document.querySelectorAll(".season-item");
+    chkArr.forEach(function (item) {
+      item.addEventListener("change", function () {
+        //가격을 다시 계산
+        showBuyGood();
+      });
+    });
+  }
+
+  // 계산 출력 기능
+  function showBuyGood() {
+    // 체크가 된 카운트를 한다. 그리고 더 한다.
+    let count = 0;
+    let priceTotal = 0;
+    const chkArr = document.querySelectorAll(".season-item");
+    chkArr.forEach(function (item) {
+      const state = item.checked;
+      if (state) {
+        count += 1;
+
+        const price = parseInt(item.value);
+        // priceTotal = priceTotal + price;
+        priceTotal += price;
+      }
+    });
+    buyTotalCount = count;
+    buyTotalMoneyPrice = priceTotal;
+    buyTotal.innerHTML = buyTotalCount;
+    buyTotalMoney.innerHTML = buyTotalMoneyPrice;
+
+    // 전체 선택 버튼 해제
+    if (buyTotalCount === chkArr.length) {
+      // 전체 체크 버튼 checked 되어야 함.
+      chkAll.checked = true;
+    } else {
+      // 전체 체크 버튼 checked 해제되어야 함.
+      chkAll.checked = false;
+    }
   }
 
   // data.json 을 로딩
